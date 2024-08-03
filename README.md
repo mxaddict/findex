@@ -17,6 +17,7 @@
     * [Automated installation from source](#automated-installation-from-source)
     * [Manual installation from source](#manual-installation-from-source)
     * [Installation from AUR](#installation-from-aur)
+    * [Hyprland](#hyprland)
     * [Notes](#notes)
   * [Customization](#customization)
   * [Plugins](#plugins)
@@ -79,6 +80,18 @@ From repo: `findex-git`
 Prebuilt: `findex-bin`
 
 After that, add `findex-daemon` to autostart/startup applications
+
+### Hyprland
+To setup findex for use in `Hyprland` add these configs to your `~/.config/hypr/hyprland.conf`
+```
+# Findex
+exec-once = findex-daemon
+bind = $mod, space, exec, echo 1 > ~/.config/findex/toggle_file
+windowrulev2 = float, class:^(findex)$
+windowrulev2 = noanim, class:^(findex)$
+windowrulev2 = noborder, class:^(findex)$
+windowrulev2 = noshadow, class:^(findex)$
+```
 
 ### Notes
 - Findex can't bind hotkey in Wayland. Bind hotkey to `echo 1 > ~/.config/findex/toggle_file`
